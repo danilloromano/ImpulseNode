@@ -3,12 +3,16 @@
  }
 
 body {
+  margin-top: 7%;
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 }
 
 header {
+  position: fixed;
+  top: 0;
 	background-color: black;
+  width: 100%;
 	height: 4em;
 	color: #FFF;
 	margin-bottom: 1em;
@@ -46,12 +50,12 @@ header .container:before{
 	margin: 0 auto;
 }
 
-section{
+section {
 	margin: 2em 0;
 	overflow: hidden;
 }
 
-section h2{
+section h2 {
 	font-size: 3em;
 	display: block;
 	padding-bottom: .5em;
@@ -95,12 +99,12 @@ td, th {
 	vertical-align: middle;
 }
 
-th{
+th {
 	font-weight: bold;
 	background-color: rgba(0,0,0,0.4);
 }
 
-input{
+input {
 	border: 1px solid #ccc;
 	padding: .7em;
 	width: 100%;
@@ -113,28 +117,39 @@ input{
   margin: auto;
 }
 
-label{
+label {
 	color: #555;
 	display: block;
 	margin-bottom: .2em;
 }
 
-fieldset{
+fieldset {
 	border: 0;
 	margin: 0;
 	padding-bottom: 1em;
 }
 
-.campo-medio{
+.tipos {
+  display: block;
+  margin-bottom: 12px;
+  outline: none;
+  box-shadow: 5px 5px 7px rgba(0,0,0,0.7);
+  border-radius: 50px;
+  width: 520px;
+  height: 35px;
+  padding: 6px 12px;
+}
+
+.campo-medio {
 	width: 49%;
 	float: left;
 }
 
-.campo-medio:nth-child(even){
+.campo-medio:nth-child(even) {
 	padding-right: .5em;
 }
 
-.campo-medio:nth-child(odd){
+.campo-medio:nth-child(odd) {
 	padding-left: .5em;
 	margin-right: 2%;
 }
@@ -142,7 +157,6 @@ fieldset{
 input {
 	box-shadow: 5px 5px 7px rgba(0,0,0,0.7);
 	border-radius: 50px;
-
 }
 
 input:focus {
@@ -192,15 +206,15 @@ button:active{
 }
 
 .footer{
-
 	background-color: rgba(0,0,0,0.9);
-	position: fixed;
+	position: static;
 	width: 100%;
 	bottom: 0;
 	height: 4em;
 }
-#copy{
-	margin-top: 1em;
+
+#copy {
+  padding-top: 1em;
 	font-size: 1.3em;
 	text-align: center;
 	color: rgba(255,255,255,0.7);
@@ -243,8 +257,4 @@ tr:hover {
 	position: absolute;
 	left: 35%;
 	top: 37%;
-}
-
-#icone_title{
-
 }

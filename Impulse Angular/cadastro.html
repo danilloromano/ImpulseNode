@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/cadastro.css">
 		<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
-		<script src="../../Projects/angular-1.5.8/angular.min.js"></script>
+		<script src="../../../Projects/angular-1.5.8/angular.min.js"></script>
 	</head>
 	<body ng-controller="cadastroClienteCtrl">
 		<header>
@@ -27,17 +27,21 @@
 				<table>
 					<tr>
 						<th></th>
+						<th>Id</th>
 						<th><a class="ordenarPorNome" href="" ng-click="ordenarPor('nome')"><i class="fa fa-sort"></i>Nome</a></th>
 						<th>Endereço</th>
 						<th>Telefone</th>
 						<th>Email</th>
+						<th>Tipo</th>
 					</tr>
 					<tr ng-repeat="cliente in clientes | filter:busca | orderBy:criterioDeOrdenacao:direcao">
 						<td><input class="checkbox" type="checkbox" ng-model="cliente.selecionado"></td>
+						<td>{{cliente.id}}</td>
 						<td>{{cliente.name}}</td>
 						<td>{{cliente.address}}</td>
 						<td>{{cliente.phone}}</td>
 						<td>{{cliente.email}}</td>
+						<td>{{cliente.tipo}}</td>
 					</tr>
 				</table>
 				<button id="excluirCliente" class="botao bto-principal" ng-show="clienteSelecionado(cliente.selecionado)" ng-click="excluirCliente(cliente)">Excluir</button>
@@ -49,6 +53,11 @@
 				<div class="erroValidacao" ng-show="clienteForm.phone.$error.pattern">O campo telefone deve seguir o padrão (xx) xxxxx-xxxx.</div>
 				<div class="erroValidacao" ng-show="clienteForm.email.$invalid && clienteForm.email.$dirty">Preencha o campo email.</div>
 				<form name="clienteForm">
+
+					<select class="tipos" name="" ng-model="cliente.tipo" ng-options="tipo.tipo for tipo in tipos">
+						<option value="">Selecione um Tipo:</option>
+					</select>
+
 					<fieldset class="campo-medio">
 						<label for="campo-nome">Nome:</label>
 						<input id="campo-nome" type="text" name="name" ng-model="cliente.name" ng-required="true" placeholder="Nome do cliente">
@@ -74,11 +83,10 @@
 			</section>
 		</main>
 		<footer class="footer">
-			<h3  id = "copy">&copy; Danillo Romano, Henrique Gasques 2016</h3>
+			<h3 id="copy">&copy; Danillo Romano, Henrique Gasques 2016</h3>
 		</footer>
-		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-		<script src="../../Projects/jquery-3.0.0.min.js"></script>
+		<script src="..\..\..\Projects\jquery-3.0.0.min.js"></script>
 		<script src="js\app.js"></script>
-		<script src="js/controllers/cadastroClienteCtrl.js"></script>
+		<script src="js\controllers/cadastroClienteCtrl.js"></script>
 		<script src="js\mascara.js"></script>
 </html>

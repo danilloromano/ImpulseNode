@@ -8,6 +8,11 @@ angular.module("impulse").controller("cadastroClienteCtrl", function($scope, $ht
   $scope.clientes = [
   ];
 
+  $scope.tipos = [
+    {tipo: "Mensalista"},
+    {tipo: "Avulso"}
+  ];
+
   $scope.adicionarCliente = function(cliente){
     $http.post("http://private-7feae-impulse4.apiary-mock.com/clientsTable", cliente).success(function(data){
       delete $scope.cliente;

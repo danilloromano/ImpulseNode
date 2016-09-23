@@ -48,16 +48,13 @@
 			</section>
 			<section>
 				<h2>Adicionar mensalista</h2>
-				<div class="erroValidacao" ng-show="clienteForm.name.$invalid && clienteForm.nome.$dirty">Preencha o campo nome.</div>
-				<div class="erroValidacao" ng-show="clienteForm.phone.$error.required && clienteForm.telefone.$dirty">Preencha o campo telefone.</div>
+				<div class="erroValidacao" ng-show="clienteForm.name.$invalid && clienteForm.name.$dirty">Preencha o campo nome.</div>
+				<div class="erroValidacao" ng-show="clienteForm.phone.$error.required && clienteForm.phone.$dirty">Preencha o campo telefone.</div>
 				<div class="erroValidacao" ng-show="clienteForm.phone.$error.pattern">O campo telefone deve seguir o padrão (xx) xxxxx-xxxx.</div>
 				<div class="erroValidacao" ng-show="clienteForm.email.$invalid && clienteForm.email.$dirty">Preencha o campo email.</div>
 				<form name="clienteForm">
 
 					<select class="tipos" name="" ng-model="cliente.tipo" ng-options="tipo.tipo for tipo in tipos">
-						<option value="">Selecione um Tipo:</option>
-					</select>
-
 					<fieldset class="campo-medio">
 						<label for="campo-nome">Nome:</label>
 						<input id="campo-nome" type="text" name="name" ng-model="cliente.name" ng-required="true" placeholder="Nome do cliente">
@@ -77,6 +74,10 @@
 						<label for="campo-email">Email:</label>
 						<input id="campo-email" type="text" name="email" ng-model="cliente.email" ng-required="true" placeholder="Email do cliente">
 					</fieldset>
+
+					<select class="tipos" name="" ng-model="cliente.tipo" ng-options="tipo.tipo for tipo in tipos">
+						<option value="">Selecione um Tipo:</option>
+					</select>
 
 					<button id="adicionar-mensalista" class="botao bto-principal" ng-disabled="clienteForm.$invalid" ng-click="adicionarCliente(cliente)">Adicionar</button>
 				</form>

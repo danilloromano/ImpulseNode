@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cadastro de Produtos</title>
+		<link id="icone_title" rel="icon" href="imagens/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+		<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<a href="home.html"><div class="imagemFundo"></div></a>
+				<h1>Cadastro de Produtos</h1>
+			</div>
+		</header>
+		<main class="container">
+			<section>
+				<h2>Produtos</h2>
+				<table>
+					<tr>
+						<th>Nome</th>
+						<th>Marca</th>
+						<th>Descricao</th>
+						<th>Quantidade</th>
+						<th>Valor_Produto</th>
+						<th>Valor_Venda</th>
+						<th>Lucro</th>
+						<th>Excluir</th>
+					</tr>
+					<tr class="produtos">
+						<td class="info-nome">Cerveja</td>
+						<td class="info-marca" id="marca-1">Enrraba Master</td>
+						<td class="info-descricao" id="descricao-1">Brasilian Hemp Ale</td>
+						<td class="info-quantidade" id="quantidade-1">20</td>
+						<td class="info-valor_produto" id="valor_produto-1">15,00</td>
+						<td class="info-valor_venda" id="valor_venda-1">20,00</td>
+						<td class="info-lucro" id="lucro-1"></td>
+						<td class="excluir"><i class='fa fa-trash fa-2x'></i></td>
+					</tr>
+				</table>
+			</section>
+			<section>
+				<h2>Adicionar Produtos</h2>
+				<form>
+					<fieldset class="campo-medio">
+						<label for="nome">Nome:</label>
+						<input id="campo-nome" type="text" placeholder="nome do produto">
+					</fieldset>
+					<fieldset class="campo-medio">
+						<label for="endereco">Marca:</label>
+						<input id="campo-marca" type="text" placeholder="marca">
+					</fieldset>
+					<fieldset class="campo-medio">
+						<label for="telefonte">Descricao:</label>
+						<input id="campo-descricao" type="text" placeholder="Descricao">
+					</fieldset>
+					<fieldset class="campo-medio">
+						<label for="email">Quantidade:</label>
+						<input id="campo-quantidade" type="text" placeholder="Quantidade">
+					</fieldset>
+					<fieldset class="campo-medio">
+						<label for="email">Valor Produto:</label>
+						<input id="campo-valor_produto" type="text" placeholder="Valor de compra do produto">
+					</fieldset>
+					<fieldset class="campo-medio">
+						<label for="email">Valor Venda:</label>
+						<input id="campo-valor_venda" type="text" placeholder="Valor de venda do produto">
+					</fieldset>
+					<button id="adicionar-produto" class="botao bto-principal">Adicionar</button>
+				</form>
+			</section>
+		</main>
+		<footer class="footer">
+			<h3  id = "copy">&copy;Danillo Romano, Henrique Gasques 2016</h3>
+		</footer>
+
+		<script src="jquery-3.0.0.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+		<script src="js/lucroImplicito.js"></script>
+		<script src="js/CriaTabelaProduto.js"></script>
+		<script src="js/adiciona_produto.js"></script>
+	</body>
+	<script>
+
+	</script>
+</html>

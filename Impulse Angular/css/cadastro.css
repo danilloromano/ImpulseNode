@@ -1,0 +1,258 @@
+ * {
+	box-sizing: border-box;
+ }
+
+body {
+  margin-top: 7%;
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+	background-color: black;
+  width: 100%;
+	height: 4em;
+	color: #FFF;
+	margin-bottom: 1em;
+}
+
+.imagemFundo {
+	display: inline-block;
+	position: absolute;
+	left: 1em;
+	background: url(imagens/favicon.ico) center center no-repeat;
+	border: 0px solid black;
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	margin-right: 20px;
+}
+
+header h1 {
+	font-size: 2.5em;
+	display:inline;
+	vertical-align:	middle;
+	font-family: 'Creepster', cursive;
+}
+
+header .container:before{
+	content: '';
+	display:inline-block;
+	height: 100%;
+	vertical-align:	middle;
+}
+
+.container {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+section {
+	margin: 2em 0;
+	overflow: hidden;
+}
+
+section h2 {
+	font-size: 3em;
+	display: block;
+	padding-bottom: .5em;
+	margin-bottom: .5em;
+	font-family: 'Creepster', cursive;
+}
+
+.fa-search {
+  margin-left: 20px;
+  vertical-align: middle;
+}
+
+#busca {
+  box-shadow: none;
+  border-radius: 0px;
+  width: 92%;
+  margin-left: 14px;
+  margin-bottom: 15px;
+}
+
+.fa-sort {
+  margin-right: 2px;
+}
+
+.ordenarPorNome {
+  text-decoration: none;
+  color: black;
+}
+
+table {
+	width: 98%;
+	box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+	margin-bottom: 3em;
+}
+
+td, th {
+	padding: .7em;
+	margin: 0;
+	border: 1px solid #ccc;
+	text-align: center;
+	vertical-align: middle;
+}
+
+th {
+	font-weight: bold;
+	background-color: rgba(0,0,0,0.4);
+}
+
+input {
+	border: 1px solid #ccc;
+	padding: .7em;
+	width: 100%;
+}
+
+.checkbox {
+  box-shadow: none;
+  width: 15px;
+  height: 15px;
+  margin: auto;
+}
+
+label {
+	color: #555;
+	display: block;
+	margin-bottom: .2em;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding-bottom: 1em;
+}
+
+.tipos {
+  display: block;
+  margin: 0 0 40px 8px;
+  outline: none;
+  box-shadow: 5px 5px 7px rgba(0,0,0,0.7);
+  border-radius: 50px;
+  width: 48%;
+  height: 35px;
+  padding: 6px;
+}
+
+.campo-medio {
+	width: 49%;
+	float: left;
+}
+
+.campo-medio:nth-child(even) {
+	padding-right: .5em;
+}
+
+.campo-medio:nth-child(odd) {
+	padding-left: .5em;
+	margin-right: 2%;
+}
+
+input {
+	box-shadow: 5px 5px 7px rgba(0,0,0,0.7);
+	border-radius: 50px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.erroValidacao {
+  border: 1px solid rgba(255, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: rgba(255, 0, 0, 0.7);
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+button {
+	background-color: #8c8c8c;
+	color: black;
+	border-radius: 50px;
+	border-color: black;
+	font-weight: bold;
+	padding: .5em 2em;
+	border: 0;
+	border-bottom: 3px solid;
+	font-size: 1.5em;
+	cursor: pointer;
+	margin: 1em 0 2em 0;;
+	width: 20%;
+	font-family: 'Creepster', cursive;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:hover {
+	background-color: rgba(0,0,0,0.7);
+	border-color: black;
+	color: white;
+}
+
+button:active {
+	margin-top: 25px;
+	border: 0;
+}
+
+.footer {
+	background-color: rgba(0,0,0,0.9);
+	position: static;
+	width: 100%;
+	bottom: 0;
+	height: 4em;
+}
+
+#copy {
+  padding-top: 1em;
+	font-size: 1.3em;
+	text-align: center;
+	color: rgba(255,255,255,0.7);
+}
+
+.editar {
+	cursor: pointer;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	text-align: center;
+}
+
+tr:hover {
+	background-color: rgba(0,0,0,0.2);
+}
+
+.excluir {
+	cursor: pointer;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	text-align: center;
+}
+
+.img_fundo {
+	height: 300px;
+	width: 300px;
+	margin-top: 100px;
+	position: relative;
+	right: 30%;
+	border-radius: 50%;
+	background: url(imagens/ursoImpulse.jpg) no-repeat;
+	background-size: cover;
+}
+
+.Impulse_logo {
+	font-family: 'Creepster', cursive;
+	font-size: 10em;
+	position: absolute;
+	left: 35%;
+	top: 37%;
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html ng-app="impulse" lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cadastro Cliente</title>
+		<link id="icone_title" rel="icon" href="imagens/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+		<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+		<script src="../../../Projects/angular-1.5.8/angular.min.js"></script>
+	</head>
+	<body ng-controller="cadastroClienteCtrl">
+		<header>
+			<div class="container">
+				<a href="home.html"><div class="imagemFundo"></div></a>
+				<h1>Cadastro de Clientes</h1>
+			</div>
+		</header>
+		<main class="container">
+			<section>
+				<h2>Mensalistas</h2>
+				<div class="container-busca">
+					<i class="fa fa-search fa-2x"></i>
+					<input id="busca" type="text" ng-model="busca" placeholder="Busca">
+				</div>
+				<table>
+					<tr>
+						<th></th>
+						<th>Id</th>
+						<th><a class="ordenarPorNome" href="" ng-click="ordenarPor('nome')"><i class="fa fa-sort"></i>Nome</a></th>
+						<th>Endereço</th>
+						<th>Telefone</th>
+						<th>Email</th>
+						<th>Tipo</th>
+					</tr>
+					<tr ng-repeat="cliente in clientes | filter:busca | orderBy:criterioDeOrdenacao:direcao">
+						<td><input class="checkbox" type="checkbox" ng-model="cliente.selecionado"></td>
+						<td>{{cliente.id}}</td>
+						<td>{{cliente.name}}</td>
+						<td>{{cliente.address}}</td>
+						<td>{{cliente.phone}}</td>
+						<td>{{cliente.email}}</td>
+						<td>{{cliente.tipo}}</td>
+					</tr>
+				</table>
+				<button id="excluirCliente" class="botao bto-principal" ng-show="clienteSelecionado(cliente.selecionado)" ng-click="excluirCliente(cliente)">Excluir</button>
+			</section>
+			<section>
+				<h2>Adicionar mensalista</h2>
+				<div class="erroValidacao" ng-show="clienteForm.name.$invalid && clienteForm.name.$dirty">Preencha o campo nome.</div>
+				<div class="erroValidacao" ng-show="clienteForm.phone.$error.required && clienteForm.phone.$dirty">Preencha o campo telefone.</div>
+				<div class="erroValidacao" ng-show="clienteForm.phone.$error.pattern">O campo telefone deve seguir o padrão (xx) xxxxx-xxxx.</div>
+				<div class="erroValidacao" ng-show="clienteForm.email.$invalid && clienteForm.email.$dirty">Preencha o campo email.</div>
+				<form name="clienteForm">
+
+					<select class="tipos" name="" ng-model="cliente.tipo" ng-options="tipo.tipo for tipo in tipos">
+					<fieldset class="campo-medio">
+						<label for="campo-nome">Nome:</label>
+						<input id="campo-nome" type="text" name="name" ng-model="cliente.name" ng-required="true" placeholder="Nome do cliente">
+					</fieldset>
+
+					<fieldset class="campo-medio">
+						<label for="campo-endereco">Endereço:</label>
+						<input id="campo-endereco" type="text" name="address" ng-model="cliente.address" ng-required="false" placeholder="Endereco do cliente">
+					</fieldset>
+
+					<fieldset class="campo-medio">
+						<label for="campo-telefone">Telefonte:</label>
+						<input id="campo-telefone" type="tel" name="phone" ng-model="cliente.phone" ng-required="true" ng-pattern="/^\([1-9]{2}\)\s[2-9][0-9]{3,4}\-[0-9]{4}/" placeholder="Telefone do cliente">
+					</fieldset>
+
+					<fieldset class="campo-medio">
+						<label for="campo-email">Email:</label>
+						<input id="campo-email" type="text" name="email" ng-model="cliente.email" ng-required="true" placeholder="Email do cliente">
+					</fieldset>
+
+					<select class="tipos" name="" ng-model="cliente.tipo" ng-options="tipo.tipo for tipo in tipos">
+						<option value="">Selecione um Tipo:</option>
+					</select>
+
+					<button id="adicionar-mensalista" class="botao bto-principal" ng-disabled="clienteForm.$invalid" ng-click="adicionarCliente(cliente)">Adicionar</button>
+				</form>
+			</section>
+		</main>
+		<footer class="footer">
+			<h3 id="copy">&copy; Danillo Romano, Henrique Gasques 2016</h3>
+		</footer>
+		<script src="..\..\..\Projects\jquery-3.0.0.min.js"></script>
+		<script src="js\app.js"></script>
+		<script src="js\controllers/cadastroClienteCtrl.js"></script>
+		<script src="js\mascara.js"></script>
+</html>
